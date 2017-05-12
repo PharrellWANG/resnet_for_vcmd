@@ -57,9 +57,9 @@ def train(hps):
     # images = md.train.images
     # labels = md.train.labels
     with tf.name_scope('input'):
-        images = tf.placeholder(tf.float32, [None, image_width, image_width, 1], name='X-input')
+        images = tf.placeholder(tf.float32, [100, image_width, image_width, 1], name='batch-images-input')
         # correct answers go here
-        labels = tf.placeholder(tf.float32, [None, CLASSES], name='Y-input')
+        labels = tf.placeholder(tf.float32, [100, CLASSES], name='correct-labels-input')
 
     with tf.name_scope('input_reshape'):
         image_shaped_input = tf.reshape(images, [-1, image_width, image_width, 1])

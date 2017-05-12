@@ -42,7 +42,7 @@ class ResNet(object):
     
         Args:
           hps: Hyperparameters.
-          images: Batches of images. [batch_size, image_size, image_size, 3]
+          images: Batches of images. [batch_size, image_size, image_size, 1]
           labels: Batches of labels. [batch_size, num_classes]
           mode: One of 'train' and 'eval'.
         """
@@ -69,7 +69,7 @@ class ResNet(object):
         """Build the core model within the graph."""
         with tf.variable_scope('init'):
             x = self._images
-            x = self._conv('init_conv', x, 3, 3, 16, self._stride_arr(1))
+            x = self._conv('init_conv', x, 3, 1, 16, self._stride_arr(1))
 
         strides = [1, 2, 2]
         activate_before_residual = [True, False, False]
@@ -141,10 +141,10 @@ class ResNet(object):
             zip(grads, trainable_variables),
             global_step=self.global_step, name='train_step')
 
-        print('wtf======...........-----------------------0.0.0.00..........................wtfwtf   wtf   wtf!!!')
-
-        train_ops = [apply_op] + self._extra_train_ops
-        self.train_op = tf.group(*train_ops)
+        # train_ops = [apply_op] + self._extra_train_ops
+        train_ops = apply_op
+        # self.train_op = tf.group(*train_ops)
+        self.train_op = train_ops
 
     # TODO(xpan): Consider batch_norm in contrib/layers/python/layers/layers.py
     def _batch_norm(self, name, x):
@@ -271,6 +271,7 @@ class ResNet(object):
         return tf.multiply(self.hps.weight_decay_rate, tf.add_n(costs))
 
     def _conv(self, name, x, filter_size, in_filters, out_filters, strides):
+      # _conv('init_conv', x, 3, 3, 16, self._stride_arr(1))
         """Convolution."""
         with tf.variable_scope(name):
             n = filter_size * filter_size * out_filters

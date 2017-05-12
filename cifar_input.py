@@ -33,6 +33,13 @@ def build_input(dataset, data_path, batch_size, mode):
     Raises:
         ValueError: when the specified dataset is not supported.
     """
+    print('----------------------======================-----------------')
+    print('----------------------======================-----------------')
+    print('i am calling build input once again')
+    print('i am calling build input once again')
+    print('----------------------======================-----------------')
+    print('----------------------======================-----------------')
+    print('----------------------======================-----------------')
     image_size = 32
     if dataset == 'cifar10':
         label_bytes = 1
@@ -98,6 +105,15 @@ def build_input(dataset, data_path, batch_size, mode):
 
     # Read 'batch' labels + images from the example queue.
     images, labels = example_queue.dequeue_many(batch_size)
+    print('')
+    print('')
+    print('')
+    print('=====================')
+    print('get anther batches of images again')
+    print('=====================')
+    print('')
+    print('')
+    print('')
     labels = tf.reshape(labels, [batch_size, 1])
     indices = tf.reshape(tf.range(0, batch_size, 1), [batch_size, 1])
     labels = tf.sparse_to_dense(

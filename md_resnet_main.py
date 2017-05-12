@@ -13,51 +13,64 @@
 # limitations under the License.
 # ==============================================================================
 
+# tensorboard --logdir=/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model
+
 """ResNet Train/Eval module.
 """
 import time
 import six
 import sys
 
-import cifar_input
 import numpy as np
-import resnet_model
+import md_resnet_model
 import tensorflow as tf
+from md_input import read_train_data_sets, read_test_data_sets
 
 FLAGS = tf.app.flags.FLAGS
-tf.app.flags.DEFINE_string('dataset', 'cifar10', 'cifar10 or cifar100.')
 tf.app.flags.DEFINE_string('mode', 'train', 'train or eval.')
-tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/RESNET/cifar10/data_batch*',
+tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/train_data/training_16by16_fewer.csv',
                            'Filepattern for training data.')
-tf.app.flags.DEFINE_string('eval_data_path', '',
+tf.app.flags.DEFINE_string('eval_data_path', '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16.csv',
                            'Filepattern for eval data')
-tf.app.flags.DEFINE_integer('image_size', 32, 'Image side length.')
-tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/orig_resnet_model/train',
+tf.app.flags.DEFINE_integer('image_size', 16, 'Image side length.')
+tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model/train',
                            'Directory to keep training outputs.')
-tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/orig_resnet_model/eval',
+tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model/eval',
                            'Directory to keep eval outputs.')
 tf.app.flags.DEFINE_integer('eval_batch_count', 50,
                             'Number of batches to eval.')
 tf.app.flags.DEFINE_bool('eval_once', False,
                          'Whether evaluate the model only once.')
-tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/orig_resnet_model',
+tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model',
                            'Directory to keep the checkpoints. Should be a '
                            'parent directory of FLAGS.train_dir/eval_dir.')
-tf.app.flags.DEFINE_integer('num_gpus', 1,
-                            'Number of gpus used for training. (0 or 1)')
 
 
 def train(hps):
     """Training loop."""
-    images, labels = cifar_input.build_input(
-        FLAGS.dataset, FLAGS.train_data_path, hps.batch_size, FLAGS.mode)
-    model = resnet_model.ResNet(hps, images, labels, FLAGS.mode)
+    image_width = 16
+
+    CLASSES=37
+
+    md = read_train_data_sets()
+    # images, labels = md.train.next_batch(100)
+    # images = md.train.images
+    # labels = md.train.labels
+    with tf.name_scope('input'):
+        images = tf.placeholder(tf.float32, [None, image_width, image_width, 1], name='X-input')
+        # correct answers go here
+        labels = tf.placeholder(tf.float32, [None, CLASSES], name='Y-input')
+
+    with tf.name_scope('input_reshape'):
+        image_shaped_input = tf.reshape(images, [-1, image_width, image_width, 1])
+        tf.summary.image('input', image_shaped_input, 100)
+
+    model = md_resnet_model.ResNet(hps, images, labels, FLAGS.mode)
     model.build_graph()
 
     param_stats = tf.contrib.tfprof.model_analyzer.print_model_analysis(
         tf.get_default_graph(),
-        tfprof_options=tf.contrib.tfprof.model_analyzer.
-            TRAINABLE_VARS_PARAMS_STAT_OPTIONS)
+        tfprof_options=tf.contrib.tfprof.model_analyzer.TRAINABLE_VARS_PARAMS_STAT_OPTIONS)
     sys.stdout.write('total_params: %d\n' % param_stats.total_parameters)
 
     tf.contrib.tfprof.model_analyzer.print_model_analysis(
@@ -110,18 +123,18 @@ def train(hps):
             # SummarySaverHook. To do that we set save_summaries_steps to 0.
             save_summaries_steps=0,
             config=tf.ConfigProto(allow_soft_placement=True)) as mon_sess:
-        cnt=0
-        while not mon_sess.should_stop():
-            cnt += 1
-            print(str(cnt) + '-------------------------------------------------->')
-            mon_sess.run(model.train_op)
+        # while not mon_sess.should_stop():
+        for i in range(1000000):
+            batch_X, batch_Y = md.train.next_batch(100)
+            mon_sess.run(model.train_op, {images: batch_X, labels: batch_Y})
 
 
 def evaluate(hps):
     """Eval loop."""
-    images, labels = cifar_input.build_input(
-        FLAGS.dataset, FLAGS.eval_data_path, hps.batch_size, FLAGS.mode)
-    model = resnet_model.ResNet(hps, images, labels, FLAGS.mode)
+    md = read_test_data_sets()
+    images = md.test.images
+    labels = md.test.labels
+    model = md_resnet_model.ResNet(hps, images, labels, FLAGS.mode)
     model.build_graph()
     saver = tf.train.Saver()
     summary_writer = tf.summary.FileWriter(FLAGS.eval_dir)
@@ -176,32 +189,23 @@ def evaluate(hps):
 
 
 def main(_):
-    if FLAGS.num_gpus == 0:
-        dev = '/cpu:0'
-    elif FLAGS.num_gpus == 1:
-        dev = '/gpu:0'
-    else:
-        raise ValueError('Only support 0 or 1 gpu.')
+    dev = '/gpu:0'
 
-    if FLAGS.mode == 'train':
-        batch_size = 128
-    elif FLAGS.mode == 'eval':
-        batch_size = 100
+    batch_size = 100
 
-    if FLAGS.dataset == 'cifar10':
-        num_classes = 10
-    elif FLAGS.dataset == 'cifar100':
-        num_classes = 100
+    num_classes = 37
 
-    hps = resnet_model.HParams(batch_size=batch_size,
-                               num_classes=num_classes,
-                               min_lrn_rate=0.0001,
-                               lrn_rate=0.1,
-                               num_residual_units=5,
-                               use_bottleneck=False,
-                               weight_decay_rate=0.0002,
-                               relu_leakiness=0.1,
-                               optimizer='mom')
+    hps = md_resnet_model.HParams(batch_size=batch_size,
+                                   num_classes=num_classes,
+                                   min_lrn_rate=0.0001,
+                                   lrn_rate=0.1,
+                                   num_residual_units=5,
+                                   use_bottleneck=False,
+                                   weight_decay_rate=0.0002,
+                                   relu_leakiness=0.1,
+                                   optimizer='mom')
+
+    FLAGS.mode = 'train'
 
     with tf.device(dev):
         if FLAGS.mode == 'train':

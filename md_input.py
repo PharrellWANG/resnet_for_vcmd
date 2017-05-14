@@ -26,57 +26,57 @@ Dataset = collections.namedtuple('Dataset', ['data', 'target'])
 Datasets = collections.namedtuple('Datasets', ['train', 'validation', 'test'])
 Datasets_train = collections.namedtuple('Datasets', ['train', 'validation'])
 Datasets_test = collections.namedtuple('Datasets', ['test', 'test0',
-                                                                 'test1', 'test2', 'test24',
-                                                                 'test25', 'test26', 'test27',
-                                                                 'test28', 'test29',
-                                                                 'test30', 'test31', 'test32',
-                                                                 'test33', 'test34', 'test35', 'test36'])
+                                                    'test1', 'test2', 'test24',
+                                                    'test25', 'test26', 'test27',
+                                                    'test28', 'test29',
+                                                    'test30', 'test31', 'test32',
+                                                    'test33', 'test34', 'test35', 'test36'])
 Datasets_multi_testing_set = collections.namedtuple('Datasets', ['train', 'validation', 'test', 'test0',
                                                                  'test1', 'test2', 'test24',
                                                                  'test25', 'test26', 'test27',
                                                                  'test28', 'test29',
                                                                  'test30', 'test31', 'test32',
                                                                  'test33', 'test34', 'test35', 'test36'])
-VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/train_data/training_16by16_fewer.csv"
-# VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/training_data_4_fake_without_comma.csv"
-VIDEO_TESTING = "/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16.csv"
-VIDEO_TESTING0 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_0.csv'
-VIDEO_TESTING1 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_1.csv'
-VIDEO_TESTING2 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_2.csv'
-VIDEO_TESTING3 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_3.csv'
-VIDEO_TESTING4 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_4.csv'
-VIDEO_TESTING5 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_5.csv'
-VIDEO_TESTING6 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_6.csv'
-VIDEO_TESTING7 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_7.csv'
-VIDEO_TESTING8 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_8.csv'
-VIDEO_TESTING9 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_9.csv'
-VIDEO_TESTING10 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_10.csv'
-VIDEO_TESTING11 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_11.csv'
-VIDEO_TESTING12 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_12.csv'
-VIDEO_TESTING13 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_13.csv'
-VIDEO_TESTING14 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_14.csv'
-VIDEO_TESTING15 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_15.csv'
-VIDEO_TESTING16 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_16.csv'
-VIDEO_TESTING17 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_17.csv'
-VIDEO_TESTING18 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_18.csv'
-VIDEO_TESTING19 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_19.csv'
-VIDEO_TESTING20 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_20.csv'
-VIDEO_TESTING21 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_21.csv'
-VIDEO_TESTING22 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_22.csv'
-VIDEO_TESTING23 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_23.csv'
-VIDEO_TESTING24 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_24.csv'
-VIDEO_TESTING25 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_25.csv'
-VIDEO_TESTING26 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_26.csv'
-VIDEO_TESTING27 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_27.csv'
-VIDEO_TESTING28 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_28.csv'
-VIDEO_TESTING29 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_29.csv'
-VIDEO_TESTING30 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_30.csv'
-VIDEO_TESTING31 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_31.csv'
-VIDEO_TESTING32 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_32.csv'
-VIDEO_TESTING33 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_33.csv'
-VIDEO_TESTING34 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_34.csv'
-VIDEO_TESTING35 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_35.csv'
-VIDEO_TESTING36 = '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16_36.csv'
+VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/train_data_32x32/training_32x32_equal.csv"
+# VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/training_data_4_fake_without_comma.csv"
+VIDEO_TESTING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32.csv"
+VIDEO_TESTING0 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_0.csv'
+VIDEO_TESTING1 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_1.csv'
+VIDEO_TESTING2 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_2.csv'
+VIDEO_TESTING3 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_3.csv'
+VIDEO_TESTING4 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_4.csv'
+VIDEO_TESTING5 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_5.csv'
+VIDEO_TESTING6 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_6.csv'
+VIDEO_TESTING7 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_7.csv'
+VIDEO_TESTING8 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_8.csv'
+VIDEO_TESTING9 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_9.csv'
+VIDEO_TESTING10 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_10.csv'
+VIDEO_TESTING11 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_11.csv'
+VIDEO_TESTING12 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_12.csv'
+VIDEO_TESTING13 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_13.csv'
+VIDEO_TESTING14 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_14.csv'
+VIDEO_TESTING15 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_15.csv'
+VIDEO_TESTING16 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_16.csv'
+VIDEO_TESTING17 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_17.csv'
+VIDEO_TESTING18 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_18.csv'
+VIDEO_TESTING19 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_19.csv'
+VIDEO_TESTING20 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_20.csv'
+VIDEO_TESTING21 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_21.csv'
+VIDEO_TESTING22 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_22.csv'
+VIDEO_TESTING23 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_23.csv'
+VIDEO_TESTING24 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_24.csv'
+VIDEO_TESTING25 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_25.csv'
+VIDEO_TESTING26 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_26.csv'
+VIDEO_TESTING27 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_27.csv'
+VIDEO_TESTING28 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_28.csv'
+VIDEO_TESTING29 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_29.csv'
+VIDEO_TESTING30 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_30.csv'
+VIDEO_TESTING31 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_31.csv'
+VIDEO_TESTING32 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_32.csv'
+VIDEO_TESTING33 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_33.csv'
+VIDEO_TESTING34 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_34.csv'
+VIDEO_TESTING35 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_35.csv'
+VIDEO_TESTING36 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_36.csv'
 
 
 def dense_to_one_hot(labels_dense, num_classes):
@@ -101,7 +101,7 @@ def load_csv_without_header(filename,
                             target_dtype,
                             features_dtype,
                             n_samples,
-                            block_size,
+                            block_size=32,
                             target_column=-1,
                             ):
     """Load dataset from CSV file with a header row."""
@@ -216,7 +216,6 @@ class DataSet(object):
 def read_data_sets(dtype=dtypes.float32,
                    reshape=False,
                    validation_size=0):
-
     start_time_train_data_reading = datetime.now()
     print(str(start_time_train_data_reading) + " >>>>-------> start reading the training csv file.")
     r = csv.reader(open(VIDEO_TRAINING))  # Here your csv file
@@ -236,7 +235,7 @@ def read_data_sets(dtype=dtypes.float32,
     # training set start-------------------------------------------------------->
     # train_set = load_csv_without_header(filename=VIDEO_TESTING1, target_dtype=np.int, features_dtype=np.int,
     train_set = load_csv_without_header(filename=VIDEO_TRAINING, target_dtype=np.int, features_dtype=np.int,
-                                        n_samples=row_count, block_size=16)  # 4328116
+                                        n_samples=row_count)  # 4328116
     end_of_loading_csv_without_header = datetime.now()
     duration_train_data_reading = end_of_loading_csv_without_header - end_for_row_count_of_training_csv
     print(str(end_of_loading_csv_without_header) + "   ***-------> now end reading the training csv file.")
@@ -244,7 +243,6 @@ def read_data_sets(dtype=dtypes.float32,
     # training set end -------------------------------------------------------->
 
     # n_samples=51, block_size=4)  # 4328116
-    block_width = 16
 
     train_images = train_set.data
     train_labels = train_set.target
@@ -260,7 +258,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images = test_set.data
     test_labels = test_set.target
@@ -276,7 +273,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images0 = test_set0.data
     test_labels0 = test_set0.target
@@ -293,7 +289,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images1 = test_set1.data
     test_labels1 = test_set1.target
@@ -310,7 +305,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images2 = test_set2.data
     test_labels2 = test_set2.target
@@ -327,7 +321,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images24 = test_set24.data
     test_labels24 = test_set24.target
@@ -343,7 +336,6 @@ def read_data_sets(dtype=dtypes.float32,
         target_dtype=np.int,
         features_dtype=np.int,
         n_samples=row_count,
-        block_size=block_width,
     )
     test_images25 = test_set25.data
     test_labels25 = test_set25.target
@@ -358,8 +350,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING26,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images26 = test_set26.data
     test_labels26 = test_set26.target
@@ -374,8 +365,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING27,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images27 = test_set27.data
     test_labels27 = test_set27.target
@@ -390,8 +380,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING28,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images28 = test_set28.data
     test_labels28 = test_set28.target
@@ -406,8 +395,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING29,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images29 = test_set29.data
     test_labels29 = test_set29.target
@@ -422,8 +410,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING30,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images30 = test_set30.data
     test_labels30 = test_set30.target
@@ -438,8 +425,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING31,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images31 = test_set31.data
     test_labels31 = test_set31.target
@@ -454,8 +440,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING32,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images32 = test_set32.data
     test_labels32 = test_set32.target
@@ -470,8 +455,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING33,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images33 = test_set33.data
     test_labels33 = test_set33.target
@@ -486,8 +470,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING34,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images34 = test_set34.data
     test_labels34 = test_set34.target
@@ -502,8 +485,7 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING35,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images35 = test_set35.data
     test_labels35 = test_set35.target
@@ -518,18 +500,15 @@ def read_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING36,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images36 = test_set36.data
     test_labels36 = test_set36.target
     # testing set end -------------------------------------------------------->
 
-
     if not 0 <= validation_size <= len(train_images):
         raise ValueError(
-            'Validation size should be between 0 and {}. Received: {}.'
-                .format(len(train_images), validation_size))
+            'Validation size should be between 0 and {}. Received: {}.'.format(len(train_images), validation_size))
 
     validation_images = train_images[:validation_size]
     validation_labels = train_labels[:validation_size]
@@ -581,6 +560,7 @@ def read_data_sets(dtype=dtypes.float32,
 def read_train_data_sets(dtype=dtypes.float32,
                          reshape=False,
                          validation_size=0):
+    BLOCK_SIZE = 32
 
     start_time_train_data_reading = datetime.now()
     print(str(start_time_train_data_reading) + " >>>>-------> start reading the training csv file.")
@@ -601,7 +581,7 @@ def read_train_data_sets(dtype=dtypes.float32,
     # training set start-------------------------------------------------------->
     # train_set = load_csv_without_header(filename=VIDEO_TESTING1, target_dtype=np.int, features_dtype=np.int,
     train_set = load_csv_without_header(filename=VIDEO_TRAINING, target_dtype=np.int, features_dtype=np.int,
-                                        n_samples=row_count, block_size=16)  # 4328116
+                                        n_samples=row_count, block_size=BLOCK_SIZE)  # 4328116
     end_of_loading_csv_without_header = datetime.now()
     duration_train_data_reading = end_of_loading_csv_without_header - end_for_row_count_of_training_csv
     print(str(end_of_loading_csv_without_header) + "   ***-------> now end reading the training csv file.")
@@ -609,7 +589,6 @@ def read_train_data_sets(dtype=dtypes.float32,
     # training set end -------------------------------------------------------->
 
     # n_samples=51, block_size=4)  # 4328116
-    block_width = 16
 
     train_images = train_set.data
     train_labels = train_set.target
@@ -648,9 +627,8 @@ def read_train_data_sets(dtype=dtypes.float32,
 
 
 def read_test_data_sets(dtype=dtypes.float32,
-                   reshape=False,
-                   validation_size=0):
-
+                        reshape=False,
+                        validation_size=0):
     start_time_train_data_reading = datetime.now()
     print(str(start_time_train_data_reading) + " >>>>-------> start reading the training csv file.")
     r = csv.reader(open(VIDEO_TRAINING))  # Here your csv file
@@ -668,7 +646,6 @@ def read_test_data_sets(dtype=dtypes.float32,
     print("duration for row counting of training csv: " + str(duration_row_count_training_csv))
 
     # n_samples=51, block_size=4)  # 4328116
-    block_width = 16
 
     # testing set start -------------------------------------------------------->
     start_time_test_data_reading = datetime.now()
@@ -680,8 +657,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images = test_set.data
     test_labels = test_set.target
@@ -696,8 +672,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING0,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images0 = test_set0.data
     test_labels0 = test_set0.target
@@ -713,8 +688,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING1,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images1 = test_set1.data
     test_labels1 = test_set1.target
@@ -730,8 +704,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING2,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images2 = test_set2.data
     test_labels2 = test_set2.target
@@ -747,8 +720,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING24,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images24 = test_set24.data
     test_labels24 = test_set24.target
@@ -763,8 +735,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING25,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images25 = test_set25.data
     test_labels25 = test_set25.target
@@ -779,8 +750,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING26,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images26 = test_set26.data
     test_labels26 = test_set26.target
@@ -795,8 +765,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING27,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images27 = test_set27.data
     test_labels27 = test_set27.target
@@ -811,8 +780,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING28,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images28 = test_set28.data
     test_labels28 = test_set28.target
@@ -827,8 +795,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING29,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images29 = test_set29.data
     test_labels29 = test_set29.target
@@ -843,8 +810,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING30,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images30 = test_set30.data
     test_labels30 = test_set30.target
@@ -859,8 +825,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING31,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images31 = test_set31.data
     test_labels31 = test_set31.target
@@ -875,8 +840,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING32,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images32 = test_set32.data
     test_labels32 = test_set32.target
@@ -891,8 +855,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING33,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images33 = test_set33.data
     test_labels33 = test_set33.target
@@ -907,8 +870,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING34,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images34 = test_set34.data
     test_labels34 = test_set34.target
@@ -923,8 +885,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING35,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images35 = test_set35.data
     test_labels35 = test_set35.target
@@ -939,8 +900,7 @@ def read_test_data_sets(dtype=dtypes.float32,
         filename=VIDEO_TESTING36,
         target_dtype=np.int,
         features_dtype=np.int,
-        n_samples=row_count,
-        block_size=block_width,
+        n_samples=row_count
     )
     test_images36 = test_set36.data
     test_labels36 = test_set36.target
@@ -977,6 +937,6 @@ def read_test_data_sets(dtype=dtypes.float32,
     print("****************************************************************")
 
     return Datasets_test(test=test, test0=test0, test1=test1,
-                                      test2=test2, test24=test24, test25=test25, test26=test26, test27=test27,
-                                      test28=test28, test29=test29, test30=test30, test31=test31, test32=test32,
-                                      test33=test33, test34=test34, test35=test35, test36=test36)
+                         test2=test2, test24=test24, test25=test25, test26=test26, test27=test27,
+                         test28=test28, test29=test29, test30=test30, test31=test31, test32=test32,
+                         test33=test33, test34=test34, test35=test35, test36=test36)

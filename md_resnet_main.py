@@ -28,27 +28,27 @@ from md_input import read_train_data_sets, read_test_data_sets
 
 FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('mode', 'train', 'train or eval.')
-tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/train_data/training_16by16_fewer.csv',
+tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/train_data_32x32/training_32x32_equal.csv',
                            'Filepattern for training data.')
-tf.app.flags.DEFINE_string('eval_data_path', '/Users/Pharrell_WANG/PycharmProjects/proj_vcmd/test_data/testing_16by16.csv',
+tf.app.flags.DEFINE_string('eval_data_path', '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32.csv',
                            'Filepattern for eval data')
-tf.app.flags.DEFINE_integer('image_size', 16, 'Image side length.')
-tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model/train',
+# tf.app.flags.DEFINE_integer('image_size', 32, 'Image side length.')
+tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model/train',
                            'Directory to keep training outputs.')
-tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model/eval',
+tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model/eval',
                            'Directory to keep eval outputs.')
 tf.app.flags.DEFINE_integer('eval_batch_count', 50,
                             'Number of batches to eval.')
 tf.app.flags.DEFINE_bool('eval_once', False,
                          'Whether evaluate the model only once.')
-tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/resnet_model',
+tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model',
                            'Directory to keep the checkpoints. Should be a '
                            'parent directory of FLAGS.train_dir/eval_dir.')
 
 
 def train(hps):
     """Training loop."""
-    image_width = 16
+    image_width = 32
 
     CLASSES=37
 

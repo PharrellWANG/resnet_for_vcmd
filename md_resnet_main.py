@@ -33,15 +33,15 @@ tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/PycharmProje
 tf.app.flags.DEFINE_string('eval_data_path', '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32.csv',
                            'Filepattern for eval data')
 # tf.app.flags.DEFINE_integer('image_size', 32, 'Image side length.')
-tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model/train',
+tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_wrn_model/train',
                            'Directory to keep training outputs.')
-tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model/eval',
+tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_wrn_model/eval',
                            'Directory to keep eval outputs.')
 tf.app.flags.DEFINE_integer('eval_batch_count', 50,
                             'Number of batches to eval.')
 tf.app.flags.DEFINE_bool('eval_once', False,
                          'Whether evaluate the model only once.')
-tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_resnet_model',
+tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_wrn_model',
                            'Directory to keep the checkpoints. Should be a '
                            'parent directory of FLAGS.train_dir/eval_dir.')
 
@@ -114,6 +114,10 @@ def train(hps):
                 self._lrn_rate = 0.05
             elif train_step < 30000:
                 self._lrn_rate = 0.01
+            elif train_step < 45000:
+                self._lrn_rate = 0.008
+            elif train_step < 50000:
+                self._lrn_rate = 0.006
             elif train_step < 60000:
                 self._lrn_rate = 0.005
             elif train_step < 70000:
@@ -225,7 +229,8 @@ def main(_):
                                    num_classes=num_classes,
                                    min_lrn_rate=0.0001,
                                    lrn_rate=0.1,
-                                   num_residual_units=5,
+                                   # num_residual_units=5,
+                                   num_residual_units=4,
                                    use_bottleneck=False,
                                    weight_decay_rate=0.0002,
                                    relu_leakiness=0.1,

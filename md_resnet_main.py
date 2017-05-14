@@ -106,14 +106,40 @@ def train(hps):
 
         def after_run(self, run_context, run_values):
             train_step = run_values.results
-            if train_step < 40000:
+            if train_step < 5000:
                 self._lrn_rate = 0.1
-            elif train_step < 60000:
+            elif train_step < 15000:
+                self._lrn_rate = 0.07
+            elif train_step < 20000:
+                self._lrn_rate = 0.05
+            elif train_step < 30000:
                 self._lrn_rate = 0.01
+            elif train_step < 60000:
+                self._lrn_rate = 0.005
+            elif train_step < 70000:
+                self._lrn_rate = 0.004
             elif train_step < 80000:
+                self._lrn_rate = 0.003
+            elif train_step < 90000:
+                self._lrn_rate = 0.002
+            elif train_step < 100000:
                 self._lrn_rate = 0.001
-            else:
+            elif train_step < 110000:
+                self._lrn_rate = 0.0009
+            elif train_step < 150000:
+                self._lrn_rate = 0.0008
+            elif train_step < 200000:
+                self._lrn_rate = 0.0005
+            elif train_step < 250000:
+                self._lrn_rate = 0.0003
+            elif train_step < 300000:
+                self._lrn_rate = 0.0002
+            elif train_step < 350000:
                 self._lrn_rate = 0.0001
+            elif train_step < 700000:
+                self._lrn_rate = 0.00005
+            else:
+                self._lrn_rate = 0.00002
 
     with tf.train.MonitoredTrainingSession(
             checkpoint_dir=FLAGS.log_root,

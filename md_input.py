@@ -628,25 +628,8 @@ def read_train_data_sets(dtype=dtypes.float32,
 
 def read_test_data_sets(dtype=dtypes.float32,
                         reshape=False,
-                        validation_size=0):
+                        ):
     start_time_train_data_reading = datetime.now()
-    print(str(start_time_train_data_reading) + " >>>>-------> start reading the training csv file.")
-    r = csv.reader(open(VIDEO_TRAINING))  # Here your csv file
-
-    end_for_reading_training_csv = datetime.now()
-    duration_reading_training_csv = end_for_reading_training_csv - start_time_train_data_reading
-    print("duration for reading training csv: " + str(duration_reading_training_csv))
-
-    # r = csv.reader(open(VIDEO_TESTING1))  # Here your csv file
-    row_count = sum(1 for row in r)
-    print("row_count of the training csv file: " + str(row_count))
-
-    end_for_row_count_of_training_csv = datetime.now()
-    duration_row_count_training_csv = end_for_row_count_of_training_csv - end_for_reading_training_csv
-    print("duration for row counting of training csv: " + str(duration_row_count_training_csv))
-
-    # n_samples=51, block_size=4)  # 4328116
-
     # testing set start -------------------------------------------------------->
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 1.")

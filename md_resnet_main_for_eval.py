@@ -39,7 +39,7 @@ tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/res
                            'Directory to keep eval outputs.')
 tf.app.flags.DEFINE_integer('eval_batch_count', 50,
                             'Number of batches to eval.')
-tf.app.flags.DEFINE_bool('eval_once', False,
+tf.app.flags.DEFINE_bool('eval_once', True,
                          'Whether evaluate the model only once.')
 tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_wrn_model',
                            'Directory to keep the checkpoints. Should be a '
@@ -227,7 +227,7 @@ def evaluate(hps):
 
 
 def main(_):
-    dev = '/gpu:0'
+    dev = '/cpu:0'
 
     batch_size = 100
 
@@ -244,7 +244,7 @@ def main(_):
                                    relu_leakiness=0.1,
                                    optimizer='mom')
 
-    FLAGS.mode = 'train'
+    FLAGS.mode = 'eval'
 
     with tf.device(dev):
         if FLAGS.mode == 'train':

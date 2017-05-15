@@ -225,7 +225,7 @@ def read_data_sets(dtype=dtypes.float32,
     print("duration for reading training csv: " + str(duration_reading_training_csv))
 
     # r = csv.reader(open(VIDEO_TESTING1))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     print("row_count of the training csv file: " + str(row_count))
 
     end_for_row_count_of_training_csv = datetime.now()
@@ -251,7 +251,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 1.")
     r = csv.reader(open(VIDEO_TESTING))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
 
     test_set = load_csv_without_header(
         filename=VIDEO_TESTING,
@@ -267,7 +267,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 2.")
     r = csv.reader(open(VIDEO_TESTING0))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set0 = load_csv_without_header(
         filename=VIDEO_TESTING0,
         target_dtype=np.int,
@@ -283,7 +283,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 3.")
     r = csv.reader(open(VIDEO_TESTING1))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set1 = load_csv_without_header(
         filename=VIDEO_TESTING1,
         target_dtype=np.int,
@@ -299,7 +299,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 4.")
     r = csv.reader(open(VIDEO_TESTING2))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set2 = load_csv_without_header(
         filename=VIDEO_TESTING2,
         target_dtype=np.int,
@@ -315,7 +315,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 5.")
     r = csv.reader(open(VIDEO_TESTING24))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set24 = load_csv_without_header(
         filename=VIDEO_TESTING24,
         target_dtype=np.int,
@@ -330,7 +330,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 6.")
     r = csv.reader(open(VIDEO_TESTING25))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set25 = load_csv_without_header(
         filename=VIDEO_TESTING25,
         target_dtype=np.int,
@@ -345,7 +345,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 7.")
     r = csv.reader(open(VIDEO_TESTING26))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set26 = load_csv_without_header(
         filename=VIDEO_TESTING26,
         target_dtype=np.int,
@@ -360,7 +360,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 8.")
     r = csv.reader(open(VIDEO_TESTING27))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set27 = load_csv_without_header(
         filename=VIDEO_TESTING27,
         target_dtype=np.int,
@@ -375,7 +375,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 9.")
     r = csv.reader(open(VIDEO_TESTING28))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set28 = load_csv_without_header(
         filename=VIDEO_TESTING28,
         target_dtype=np.int,
@@ -390,7 +390,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 10.")
     r = csv.reader(open(VIDEO_TESTING29))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set29 = load_csv_without_header(
         filename=VIDEO_TESTING29,
         target_dtype=np.int,
@@ -405,7 +405,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 11.")
     r = csv.reader(open(VIDEO_TESTING30))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set30 = load_csv_without_header(
         filename=VIDEO_TESTING30,
         target_dtype=np.int,
@@ -420,7 +420,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 12.")
     r = csv.reader(open(VIDEO_TESTING31))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set31 = load_csv_without_header(
         filename=VIDEO_TESTING31,
         target_dtype=np.int,
@@ -435,7 +435,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 13.")
     r = csv.reader(open(VIDEO_TESTING32))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set32 = load_csv_without_header(
         filename=VIDEO_TESTING32,
         target_dtype=np.int,
@@ -450,7 +450,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 14.")
     r = csv.reader(open(VIDEO_TESTING33))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set33 = load_csv_without_header(
         filename=VIDEO_TESTING33,
         target_dtype=np.int,
@@ -465,7 +465,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 15.")
     r = csv.reader(open(VIDEO_TESTING34))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set34 = load_csv_without_header(
         filename=VIDEO_TESTING34,
         target_dtype=np.int,
@@ -480,7 +480,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 16.")
     r = csv.reader(open(VIDEO_TESTING35))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set35 = load_csv_without_header(
         filename=VIDEO_TESTING35,
         target_dtype=np.int,
@@ -495,7 +495,7 @@ def read_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 17.")
     r = csv.reader(open(VIDEO_TESTING36))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set36 = load_csv_without_header(
         filename=VIDEO_TESTING36,
         target_dtype=np.int,
@@ -571,7 +571,7 @@ def read_train_data_sets(dtype=dtypes.float32,
     print("duration for reading training csv: " + str(duration_reading_training_csv))
 
     # r = csv.reader(open(VIDEO_TESTING1))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     print("row_count of the training csv file: " + str(row_count))
 
     end_for_row_count_of_training_csv = datetime.now()
@@ -634,7 +634,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 1.")
     r = csv.reader(open(VIDEO_TESTING))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
 
     test_set = load_csv_without_header(
         filename=VIDEO_TESTING,
@@ -650,7 +650,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 2.")
     r = csv.reader(open(VIDEO_TESTING0))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set0 = load_csv_without_header(
         filename=VIDEO_TESTING0,
         target_dtype=np.int,
@@ -666,7 +666,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 3.")
     r = csv.reader(open(VIDEO_TESTING1))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set1 = load_csv_without_header(
         filename=VIDEO_TESTING1,
         target_dtype=np.int,
@@ -682,7 +682,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 4.")
     r = csv.reader(open(VIDEO_TESTING2))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set2 = load_csv_without_header(
         filename=VIDEO_TESTING2,
         target_dtype=np.int,
@@ -698,7 +698,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 5.")
     r = csv.reader(open(VIDEO_TESTING24))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set24 = load_csv_without_header(
         filename=VIDEO_TESTING24,
         target_dtype=np.int,
@@ -713,7 +713,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 6.")
     r = csv.reader(open(VIDEO_TESTING25))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set25 = load_csv_without_header(
         filename=VIDEO_TESTING25,
         target_dtype=np.int,
@@ -728,7 +728,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 7.")
     r = csv.reader(open(VIDEO_TESTING26))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set26 = load_csv_without_header(
         filename=VIDEO_TESTING26,
         target_dtype=np.int,
@@ -743,7 +743,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 8.")
     r = csv.reader(open(VIDEO_TESTING27))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set27 = load_csv_without_header(
         filename=VIDEO_TESTING27,
         target_dtype=np.int,
@@ -758,7 +758,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 9.")
     r = csv.reader(open(VIDEO_TESTING28))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set28 = load_csv_without_header(
         filename=VIDEO_TESTING28,
         target_dtype=np.int,
@@ -773,7 +773,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 10.")
     r = csv.reader(open(VIDEO_TESTING29))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set29 = load_csv_without_header(
         filename=VIDEO_TESTING29,
         target_dtype=np.int,
@@ -788,7 +788,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 11.")
     r = csv.reader(open(VIDEO_TESTING30))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set30 = load_csv_without_header(
         filename=VIDEO_TESTING30,
         target_dtype=np.int,
@@ -803,7 +803,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 12.")
     r = csv.reader(open(VIDEO_TESTING31))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set31 = load_csv_without_header(
         filename=VIDEO_TESTING31,
         target_dtype=np.int,
@@ -818,7 +818,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 13.")
     r = csv.reader(open(VIDEO_TESTING32))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set32 = load_csv_without_header(
         filename=VIDEO_TESTING32,
         target_dtype=np.int,
@@ -833,7 +833,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 14.")
     r = csv.reader(open(VIDEO_TESTING33))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set33 = load_csv_without_header(
         filename=VIDEO_TESTING33,
         target_dtype=np.int,
@@ -848,7 +848,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 15.")
     r = csv.reader(open(VIDEO_TESTING34))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set34 = load_csv_without_header(
         filename=VIDEO_TESTING34,
         target_dtype=np.int,
@@ -863,7 +863,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 16.")
     r = csv.reader(open(VIDEO_TESTING35))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set35 = load_csv_without_header(
         filename=VIDEO_TESTING35,
         target_dtype=np.int,
@@ -878,7 +878,7 @@ def read_test_data_sets(dtype=dtypes.float32,
     start_time_test_data_reading = datetime.now()
     print(str(start_time_test_data_reading) + "   ***-------> now start reading the testing csv file 17.")
     r = csv.reader(open(VIDEO_TESTING36))  # Here your csv file
-    row_count = sum(1 for row in r)
+    row_count = sum(1 for _ in r)
     test_set36 = load_csv_without_header(
         filename=VIDEO_TESTING36,
         target_dtype=np.int,

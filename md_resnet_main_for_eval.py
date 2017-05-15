@@ -37,7 +37,7 @@ tf.app.flags.DEFINE_string('train_dir', '/Users/Pharrell_WANG/PycharmProjects/re
                            'Directory to keep training outputs.')
 tf.app.flags.DEFINE_string('eval_dir', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/32x32_wrn_model/eval',
                            'Directory to keep eval outputs.')
-tf.app.flags.DEFINE_integer('eval_batch_count', 50,
+tf.app.flags.DEFINE_integer('eval_batch_count', 170,
                             'Number of batches to eval.')
 tf.app.flags.DEFINE_bool('eval_once', True,
                          'Whether evaluate the model only once.')
@@ -45,12 +45,13 @@ tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/res
                            'Directory to keep the checkpoints. Should be a '
                            'parent directory of FLAGS.train_dir/eval_dir.')
 
+image_width = 32
+
+CLASSES=37
 
 def train(hps):
     """Training loop."""
-    image_width = 32
 
-    CLASSES=37
 
     md = read_train_data_sets()
     # images, labels = md.train.next_batch(100)
@@ -170,8 +171,13 @@ def train(hps):
 def evaluate(hps):
     """Eval loop."""
     md = read_test_data_sets()
-    images = md.test.images
-    labels = md.test.labels
+    with tf.name_scope('eval_input'):
+        images = tf.placeholder(tf.float32, [100, image_width, image_width, 1], name='eval-batch-images-input')
+        # correct answers go here
+        labels = tf.placeholder(tf.float32, [100, CLASSES], name='eval-correct-labels-input')
+
+    # images = md.test.images
+    # labels = md.test.labels
     model = md_resnet_model.ResNet(hps, images, labels, FLAGS.mode)
     model.build_graph()
     saver = tf.train.Saver()
@@ -195,9 +201,10 @@ def evaluate(hps):
 
         total_prediction, correct_prediction = 0, 0
         for _ in six.moves.range(FLAGS.eval_batch_count):
+            batch_X, batch_Y = md.test.next_batch(100)
             (summaries, loss, predictions, truth, train_step) = sess.run(
                 [model.summaries, model.cost, model.predictions,
-                 model.labels, model.global_step])
+                 model.labels, model.global_step], {images: batch_X, labels: batch_Y})
 
             truth = np.argmax(truth, axis=1)
             predictions = np.argmax(predictions, axis=1)

@@ -97,7 +97,7 @@ def train(hps):
         """Sets learning_rate based on global step."""
 
         def begin(self):
-            self._lrn_rate = 0.1
+            self._lrn_rate = 0.00001
 
         def before_run(self, run_context):
             return tf.train.SessionRunArgs(
@@ -150,8 +150,10 @@ def train(hps):
                 self._lrn_rate = 0.00009
             elif train_step < 160000:
                 self._lrn_rate = 0.00008
-            else:
+            elif train_step < 180000:
                 self._lrn_rate = 0.00005
+            else:
+                self._lrn_rate = 0.00001
 
     with tf.train.MonitoredTrainingSession(
             checkpoint_dir=FLAGS.log_root,
@@ -161,6 +163,7 @@ def train(hps):
             # SummarySaverHook. To do that we set save_summaries_steps to 0.
             save_summaries_steps=0,
             config=tf.ConfigProto(allow_soft_placement=True)) as mon_sess:
+
         # while not mon_sess.should_stop():
         for i in range(1000000):
             batch_X, batch_Y = md.train.next_batch(100)

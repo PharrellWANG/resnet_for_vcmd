@@ -38,8 +38,10 @@ Datasets_multi_testing_set = collections.namedtuple('Datasets', ['train', 'valid
                                                                  'test30', 'test31', 'test32',
                                                                  'test33', 'test34', 'test35', 'test36'])
 VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/train_data_32x32/training_32x32_equal.csv"
+# VIDEO_TESTING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/train_data_32x32/training_32x32_equal.csv"
 # VIDEO_TRAINING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/training_data_4_fake_without_comma.csv"
 VIDEO_TESTING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32.csv"
+# VIDEO_TESTING = "/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/fake_test_32x32.csv"
 VIDEO_TESTING0 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_0.csv'
 VIDEO_TESTING1 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_1.csv'
 VIDEO_TESTING2 = '/Users/Pharrell_WANG/PycharmProjects/vcmd_data_prepare/test_data_32x32/testing_32x32_2.csv'

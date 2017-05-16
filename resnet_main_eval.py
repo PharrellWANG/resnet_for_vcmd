@@ -26,7 +26,7 @@ import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string('dataset', 'cifar10', 'cifar10 or cifar100.')
-tf.app.flags.DEFINE_string('mode', 'train', 'train or eval.')
+tf.app.flags.DEFINE_string('mode', 'eval', 'train or eval.')
 tf.app.flags.DEFINE_string('train_data_path', '/Users/Pharrell_WANG/RESNET/cifar10/data_batch*',
                            'Filepattern for training data.')
 tf.app.flags.DEFINE_string('eval_data_path', '/Users/Pharrell_WANG/RESNET/cifar10/test_batch.bin',
@@ -43,7 +43,7 @@ tf.app.flags.DEFINE_bool('eval_once', False,
 tf.app.flags.DEFINE_string('log_root', '/Users/Pharrell_WANG/PycharmProjects/resnet_for_vcmd/original_resnet_model',
                            'Directory to keep the checkpoints. Should be a '
                            'parent directory of FLAGS.train_dir/eval_dir.')
-tf.app.flags.DEFINE_integer('num_gpus', 1,
+tf.app.flags.DEFINE_integer('num_gpus', 0,
                             'Number of gpus used for training. (0 or 1)')
 
 
@@ -93,18 +93,12 @@ def train(hps):
 
         def after_run(self, run_context, run_values):
             train_step = run_values.results
-            if train_step < 1000:
-                self._lrn_rate = 0.09
-            elif train_step < 2000:
-                self._lrn_rate = 0.06
-            elif train_step < 3000:
-                self._lrn_rate = 0.03
-            elif train_step < 40000:
-                self._lrn_rate = 0.01
+            if train_step < 40000:
+                self._lrn_rate = 0.1
             elif train_step < 60000:
-                self._lrn_rate = 0.008
-            elif train_step < 90000:
-                self._lrn_rate = 0.005
+                self._lrn_rate = 0.01
+            elif train_step < 80000:
+                self._lrn_rate = 0.001
             else:
                 self._lrn_rate = 0.0001
 
